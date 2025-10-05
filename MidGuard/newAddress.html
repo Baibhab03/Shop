@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Address</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <link rel="stylesheet" href="shop2.css">
+    <link rel="stylesheet" href="newAddress.css">
+</head>
+<body>
+
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image"><img src="logo.jpeg" alt="MidGuard Logo"></span>
+                <div class="text logo-text">
+                    <span class="name">MidGuard</span>
+                    <span class="profession">Shop</span>
+                </div>
+            </div>
+            <i class='bx bx-chevron-left toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link"><a href="index.html"><i class='bx bx-store-alt icon'></i><span class="text nav-text">Discover</span></a></li>
+                    <li class="nav-link"><a href="order.html"><i class='bx bx-package icon'></i><span class="text nav-text">My Orders</span></a></li>
+                    <li class="nav-link"><a href="listed_order.html"><i class='bx bx-list-check icon'></i><span class="text nav-text">Listed Orders</span></a></li>
+                    <li class="nav-link"><a href="wishlist.html"><i class='bx bx-heart icon'></i><span class="text nav-text">Wishlist</span></a></li>
+                    <li class="nav-link"><a href="settings.html"><i class='bx bx-cog icon'></i><span class="text nav-text">Settings</span></a></li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <!-- <div class="class">
+                    <li class="nav-link"><a href="shopsignup.html"><i class='bx bx-log-in icon'></i><span class="text nav-text">Login</span></a></li>
+                </div> -->
+                <li class="profile">
+                <a href="shopsignup.html">
+                    <div class="profile-details">
+                        <i class='bx bx-user-circle icon'></i>
+                        <img src="https://placehold.co/40x40/695CFE/FFFFFF?text=BG" alt="Profile Picture">
+                        <div class="text">
+                            <span class="name">Baibhab Ghosh</span>
+                            <span class="id">User ID:123456789</span>
+                        </div>
+                    </div>
+                    <i class='bx bx-log-in logout-icon'></i>
+                </a>
+            </li>
+                <li class="mode">
+                    <div class="sun-moon"><i class='bx bx-moon icon moon'></i><i class='bx bx-sun icon sun'></i></div>
+                    <span class="mode-text text">Dark Mode</span>
+                    <div class="toggle-switch"><span class="switch"></span></div>
+                </li>
+            </div>
+        </div>
+    </nav>
+    <section class="home">
+        <header class="top-navbar">
+            <div class="navbar-content">
+                <div class="left-content">
+                    <button class="menu-btn" id="menuBtn" aria-label="Toggle Sidebar"><i class='bx bx-menu'></i></button>
+                    <div class="page-title">Address</div>
+                </div>
+                <div class="header-search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search products...">
+                </div>
+                <div class="right-content">
+                    <a href="account.html" class="nav-icon" aria-label="Account"><i class='bx bx-user-circle'></i></a>
+                    <a href="cart.html" class="nav-icon" aria-label="Cart"><i class='bx bx-cart'></i></a>
+                </div>
+            </div>
+        </header>
+        <main class="main-content">
+        <div class="hero-section">
+            <h2>Add a New Address</h2>
+            <p>Please fill in the details below to add a new address to your account.</p>
+        </div>
+            <div class="address-form-container card">
+                <form action="#" method="POST" id="addressForm">
+                    <div class="form-group">
+                        <label for="country">Country/Region</label>
+                        <select id="country" name="country">
+                            <option value="India" selected>India</option>
+                            <!-- Add other countries as needed -->
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fullName">Full name (First and Last name)</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobileNumber">Mobile number</label>
+                        <input type="tel" id="mobileNumber" name="mobileNumber" pattern="[0-9]{10}" placeholder="10-digit mobile number" required>
+                        <p class="input-hint">May be used to assist delivery.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pincode">Pincode</label>
+                        <input type="text" id="pincode" name="pincode" pattern="[0-9]{6}" placeholder="6-digit Pincode" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="addressLine1">Flat, House no., Building, Company, Apartment</label>
+                        <input type="text" id="addressLine1" name="addressLine1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="addressLine2">Area, Street, Sector, Village</label>
+                        <input type="text" id="addressLine2" name="addressLine2" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="landmark">Landmark</label>
+                        <input type="text" id="landmark" name="landmark" placeholder="E.g. near Apollo hospital">
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="city">Town/City</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <input type="text" id="state" name="state" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="defaultAddress" name="defaultAddress">
+                        <label for="defaultAddress">Make this my default address</label>
+                    </div>
+
+                    <button type="submit" class="btn-primary submit-btn">Add Address</button>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <div id="backdrop" class="backdrop"></div>
+    <script src="shop2.js"></script>
+</body>
+</html>

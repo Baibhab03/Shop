@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MidGuard | Modern Shopping</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <link rel="stylesheet" href="shop2.css">
+    <link rel="stylesheet" href="joinroom.css">
+</head>
+<body>
+
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image"><img src="logo.jpeg" alt="MidGuard Logo"></span>
+                <div class="text logo-text">
+                    <span class="name">MidGuard</span>
+                    <span class="profession">Shop</span>
+                </div>
+            </div>
+            <i class='bx bx-chevron-left toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link"><a href="index.html" class="active"><i class='bx bx-store-alt icon'></i><span class="text nav-text">Discover</span></a></li>
+                    <li class="nav-link"><a href="order.html"><i class='bx bx-package icon'></i><span class="text nav-text">My Orders</span></a></li>
+                    <li class="nav-link"><a href="listed_order.html"><i class='bx bx-list-check icon'></i><span class="text nav-text">Listed Orders</span></a></li>
+                    <li class="nav-link"><a href="wishlist.html"><i class='bx bx-heart icon'></i><span class="text nav-text">Wishlist</span></a></li>
+                    <li class="nav-link"><a href="settings.html"><i class='bx bx-cog icon'></i><span class="text nav-text">Settings</span></a></li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <!-- <div class="class">
+                    <li class="nav-link"><a href="shopsignup.html"><i class='bx bx-log-in icon'></i><span class="text nav-text">Login</span></a></li>
+                </div> -->
+                <li class="profile">
+                <a href="shopsignup.html">
+                    <div class="profile-details">
+                        <i class='bx bx-user-circle icon'></i>
+                        <img src="https://placehold.co/40x40/695CFE/FFFFFF?text=BG" alt="Profile Picture">
+                        <div class="text">
+                            <span class="name">Baibhab Ghosh</span>
+                            <span class="id">User ID:123456789</span>
+                        </div>
+                    </div>
+                    <i class='bx bx-log-in logout-icon'></i>
+                </a>
+            </li>
+                <li class="mode">
+                    <div class="sun-moon"><i class='bx bx-moon icon moon'></i><i class='bx bx-sun icon sun'></i></div>
+                    <span class="mode-text text">Dark Mode</span>
+                    <div class="toggle-switch"><span class="switch"></span></div>
+                </li>
+            </div>
+        </div>
+    </nav>
+
+    <section class="home">
+        <header class="top-navbar">
+            <div class="navbar-content">
+                <div class="left-content">
+                    <button class="menu-btn" id="menuBtn" aria-label="Toggle Sidebar"><i class='bx bx-menu'></i></button>
+                    <div class="page-title">Discover</div>
+                </div>
+                <div class="header-search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search products...">
+                </div>
+                <div class="right-content">
+                    <a href="account.html" class="nav-icon" aria-label="Account"><i class='bx bx-user-circle'></i></a>
+                    <a href="cart.html" class="nav-icon" aria-label="Cart"><i class='bx bx-cart'></i></a>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="hero-section">
+                <h1>Welcome to <span class="gradient-text">MidGuard</span></h1>
+                <h2>Find Your Next <span class="gradient-text">Favorite</span> Thing</h2>
+                <p>Discover curated picks and fresh deals—updated daily just for you.</p>
+            </div>
+            
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="watch">Watches</button>
+                <button class="filter-btn" data-filter="shoes">Shoes</button>
+                <button class="filter-btn" data-filter="sunglasses">Sunglasses</button>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card" data-category="watch" data-name="Samsung Galaxy Watch 8 Classic LTE" data-price="₹49,999" data-img="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRg7ufL--9o5MQx_-zKL7z9ngOUtrEan7tCKrkoYQbEZfMyPsf3LKb5uvbTTLkxEapzfOYbpVhb16ehzBQPlqSWMHzIvr0ygTlMgarfI_VQ_WlvHTmRYaywmq5zNWve6NXoKIrsew&usqp=CAc">
+                    <div class="card-image-container">
+                        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRg7ufL--9o5MQx_-zKL7z9ngOUtrEan7tCKrkoYQbEZfMyPsf3LKb5uvbTTLkxEapzfOYbpVhb16ehzBQPlqSWMHzIvr0ygTlMgarfI_VQ_WlvHTmRYaywmq5zNWve6NXoKIrsew&usqp=CAc" alt="Samsung Galaxy Watch">
+                        <!-- <button class="quick-view-btn"><i class='bx bx-search-alt'></i>Quick View</button> -->
+                    </div>
+                    <div class="card-body">
+                        <a href="product.html">
+                        <h3 class="product-title-link">Samsung Galaxy Watch 8 Classic LTE</h3>
+                        <span class="price">₹49,999</span>
+                            </a>
+                        <div class="card-actions">
+                            <button class="btn-primary add-to-cart-btn"><span class="btn-text default-text">Add to Cart</span><span class="btn-text added-text">Added <i class='bx bx-check'></i></span></button>
+                            <button class="btn-icon wishlist-btn" aria-label="Add to Wishlist"><i class='bx bx-heart'></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="shoes" data-name="Nike Shoes" data-price="₹2,499" data-img="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8fDA%3D">
+                    <div class="card-image-container">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8fDA%3D" alt="Running Shoes">
+                        <!-- <button class="quick-view-btn"><i class='bx bx-search-alt'></i>Quick View</button> -->
+                    </div>
+                    <div class="card-body">
+                        <a href="#">
+
+                            <h3>Nike Shoes</h3>
+                            <span class="price">₹2,499</span>
+                            <div class="card-actions">
+                                <button class="btn-primary add-to-cart-btn"><span class="btn-text default-text">Add to Cart</span><span class="btn-text added-text">Added <i class='bx bx-check'></i></span></button>
+                                <button class="btn-icon wishlist-btn" aria-label="Add to Wishlist"><i class='bx bx-heart'></i></button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                </div>
+        </main>
+        
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>&copy; 2025 MidGuard. All Rights Reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                    <a href="#" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <a href="create_room.html" class="floating-btn create-room"><span>Create Room</span><i class='bx bx-plus'></i></a>
+    <a href="#" class="floating-btn join-room"><span>Join Room</span><i class='bx bx-log-in-circle'></i></a>
+    <div id="backdrop" class="backdrop"></div>
+
+    <div class="modal-container" id="joinRoomModal" aria-hidden="true">
+        <div class="modal-content card">
+            <button class="modal-close" aria-label="Close modal"><i class='bx bx-x'></i></button>
+            <h1>JOIN ROOM</h1>
+            <form action="#">
+                <div class="form-group">
+                    <label for="roomId">ROOM ID:-</label>
+                    <input type="text" id="roomId" name="roomId" placeholder="Enter Room ID" required>
+                </div>
+                <button type="submit" class="btn-primary">JOIN</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- <div class="modal" id="quickViewModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalCloseBtn" aria-label="Close modal"><i class='bx bx-x'></i></button>
+            <div class="modal-body">
+                <div class="modal-image"><img src="" alt="Product Image"></div>
+                <div class="modal-details">
+                    <h2 id="modalProductName">Product Name</h2>
+                    <p class="modal-price" id="modalProductPrice">₹0.00</p>
+                    <p class="modal-description">Detailed product description goes here. Elevate your style with this finely crafted item, perfect for any occasion.</p>
+                    <div class="modal-actions">
+                        <button class="btn-primary add-to-cart-btn"><span class="btn-text default-text">Add to Cart</span><span class="btn-text added-text">Added <i class='bx bx-check'></i></span></button>
+                        <button class="btn-icon wishlist-btn" aria-label="Add to Wishlist"><i class='bx bx-heart'></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <script src="shop2.js"></script>
+</body>
+</html>

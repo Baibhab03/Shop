@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - MidGuard</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <link rel="stylesheet" href="shop2.css">
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image"><img src="logo.jpeg" alt="MidGuard Logo"></span>
+                <div class="text logo-text">
+                    <span class="name">MidGuard</span>
+                    <span class="profession">Shop</span>
+                </div>
+            </div>
+            <i class='bx bx-chevron-left toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link"><a href="index.html" class="active"><i class='bx bx-store-alt icon'></i><span class="text nav-text">Discover</span></a></li>
+                    <li class="nav-link"><a href="order.html"><i class='bx bx-package icon'></i><span class="text nav-text">My Orders</span></a></li>
+                    <li class="nav-link"><a href="listed_order.html"><i class='bx bx-list-check icon'></i><span class="text nav-text">Listed Orders</span></a></li>
+                    <li class="nav-link"><a href="wishlist.html"><i class='bx bx-heart icon'></i><span class="text nav-text">Wishlist</span></a></li>
+                    <li class="nav-link"><a href="settings.html"><i class='bx bx-cog icon'></i><span class="text nav-text">Settings</span></a></li>
+                    
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <!-- <div class="class">
+                    <li class="nav-link"><a href="shopsignup.html"><i class='bx bx-log-in icon'></i><span class="text nav-text">Login</span></a></li>
+                </div> -->
+                <li class="profile">
+                <a href="shopsignup.html">
+                    <div class="profile-details">
+                        <i class='bx bx-user-circle icon'></i>
+                        <img src="https://placehold.co/40x40/695CFE/FFFFFF?text=BG" alt="Profile Picture">
+                        <div class="text">
+                            <span class="name">Baibhab Ghosh</span>
+                            <span class="profession">Shop</span>
+                        </div>
+                    </div>
+                    <i class='bx bx-log-in logout-icon'></i>
+                </a>
+            </li>
+                <li class="mode">
+                    <div class="sun-moon"><i class='bx bx-moon icon moon'></i><i class='bx bx-sun icon sun'></i></div>
+                    <span class="mode-text text">Dark Mode</span>
+                    <div class="toggle-switch"><span class="switch"></span></div>
+                </li>
+            </div>
+        </div>
+    </nav>
+
+    <section class="home">
+        <header class="top-navbar">
+            <div class="navbar-content">
+                <div class="left-content">
+                    <button class="menu-btn" id="menuBtn" aria-label="Toggle Sidebar"><i class='bx bx-menu'></i></button>
+                    <div class="page-title">Discover</div>
+                </div>
+                <div class="header-search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search products...">
+                </div>
+                <div class="right-content">
+                    <a href="account.html" class="nav-icon" aria-label="Account"><i class='bx bx-user-circle'></i></a>
+                    <a href="cart.html" class="nav-icon" aria-label="Cart"><i class='bx bx-cart'></i></a>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="product-layout">
+                <div class="gallery-container">
+                    <div class="room-id-badge">Room ID: 123456</div>
+                    <div class="main-image">
+                        
+                    </div>
+                    <div class="thumbnail-rail">
+                        <div class="thumbnail active"> </div>
+                        <div class="thumbnail"> </div>
+                        <div class="thumbnail"> </div>
+                        <div class="thumbnail"> </div>
+                    </div>
+                </div>
+
+                <div class="info-container glass-card">
+                    <h1>Room 1</h1>
+                    <div class="rating-placeholder">★★★★☆ 4.5 | 1,234 Ratings</div>
+                    <div class="price-container">
+                        <span class="current-price">₹xx,999</span>
+                        <span class="original-price">M.R.P.: <del>₹xx,999</del></span>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn-primary add-to-cart-btn">Add to Cart</button>
+                        <button class="btn-secondary buy-now-btn">Buy Now</button>
+                        <button class="btn-icon wishlist-btn" aria-label="Add to Wishlist"><i class='bx bx-heart'></i></button>
+                    </div>
+                    <div class="bid-checker">
+                        <i class='bx bx-money'></i>
+                        <input type="number" placeholder="Enter Biiding Amount">
+                        <button class="bid-btn">Bid</button>
+                    </div>
+                    <div class="pincode-checker">
+                        <i class='bx bxs-map-pin'></i>
+                        <input type="text" placeholder="Enter Pincode" maxlength="6">
+                        <button class="check-btn">Check</button>
+                    </div>
+                    <div class="product-specs">
+                        <div class="spec-item">
+                            <i class='bx bx-time-five'></i>
+                            <div class="spec-details">
+                                <span class="spec-label">Used Duration</span>
+                                <p>6 Months</p>
+                            </div>
+                        </div>
+                        <div class="spec-item">
+                            <i class='bx bx-shield-quarter'></i>
+                            <div class="spec-details">
+                                <span class="spec-label">Warranty Remaining</span>
+                                <p>3 Months</p>
+                            </div>
+                        </div>
+                        <div class="spec-item">
+                            <i class='bx bx-box'></i>
+                            <div class="spec-details">
+                                <span class="spec-label">Original Box</span>
+                                <p>Available</p>
+                            </div>
+                        </div>
+                        <div class="spec-item">
+                            <i class='bx bx-receipt'></i>
+                            <div class="spec-details">
+                                <span class="spec-label">Invoice</span>
+                                <p>Available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="description-card card">
+                <div class="description-header card-header">
+                    <h2>Description</h2>
+                </div>
+                <div class="description-content scrollable">
+                    <h4>Welcome to our Room.</h4>
+                    <p>This is where the detailed description of the product or room will go.</p>
+                </div>
+            </div>
+        <section class="reviews-section">
+            <h2>Customer Reviews</h2>
+            <div class="review-summary card">
+                <div class="overall-rating">
+                    <div class="rating-value">4.5</div>
+                    <div class="rating-stars">
+                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i>
+                    </div>
+                    <p>Based on 1,234 reviews</p>
+                </div>
+                <div class="rating-breakdown">
+                    <div class="rating-bar-item">
+                        <span>5 star</span>
+                        <div class="rating-bar"><div class="bar-fill" style="width: 70%;"></div></div>
+                        <span>70%</span>
+                    </div>
+                    <div class="rating-bar-item">
+                        <span>4 star</span>
+                        <div class="rating-bar"><div class="bar-fill" style="width: 15%;"></div></div>
+                        <span>15%</span>
+                    </div>
+                    <div class="rating-bar-item">
+                        <span>3 star</span>
+                        <div class="rating-bar"><div class="bar-fill" style="width: 8%;"></div></div>
+                        <span>8%</span>
+                    </div>
+                    <div class="rating-bar-item">
+                        <span>2 star</span>
+                        <div class="rating-bar"><div class="bar-fill" style="width: 4%;"></div></div>
+                        <span>4%</span>
+                    </div>
+                    <div class="rating-bar-item">
+                        <span>1 star</span>
+                        <div class="rating-bar"><div class="bar-fill" style="width: 3%;"></div></div>
+                        <span>3%</span>
+                    </div>
+                </div>
+                <div class="write-review-cta">
+                    <h3>Share your thoughts</h3>
+                    <p>Let others know what you think of this product.</p>
+                    <button class="btn-secondary">Write a Review</button>
+                </div>
+            </div>
+        
+            <div class="review-list">
+                <div class="review-item card">
+                    <div class="review-header">
+                        <img src="https://placehold.co/40x40/random/FFFFFF?text=A" alt="Avatar">
+                        <div class="reviewer-info">
+                            <span class="name">ABCD</span>
+                            <div class="rating-stars small"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i></div>
+                        </div>
+                    </div>
+                    <div class="review-body">
+                        <h4 class="review-title">Absolutely brilliant!</h4>
+                        <p class="review-date">Reviewed on 28 September 2025 | <span class="verified">Verified Purchase</span></p>
+                        <p class="review-text">Fabulous product.</p>
+                    </div>
+                    <div class="review-footer">
+                        <span>Was this review helpful?</span>
+                        <div class="helpful-buttons">
+                            <button class="btn-icon"><i class='bx bx-like'></i> <span>12</span></button>
+                            <button class="btn-icon"><i class='bx bx-dislike'></i> <span>3</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-item card">
+            <div class="review-header">
+                <img src="https://placehold.co/40x40/random/FFFFFF?text=X" alt="Avatar">
+                <div class="reviewer-info">
+                    <span class="name">XYZ</span>
+                    <div class="rating-stars small"><i class='bx bxs-star'></i></div>
+                </div>
+            </div>
+            <div class="review-body">
+                <h4 class="review-title">Worthless.</h4>
+                <p class="review-date">Reviewed on 4 October 2025 | <span class="verified">Verified Purchase</span></p>
+                <p class="review-text">Don't go for buy.It will Ruin your money</p>
+            </div>
+            <div class="review-footer">
+                <span>Was this review helpful?</span>
+                <div class="helpful-buttons">
+                    <button class="btn-icon"><i class='bx bx-like'></i> <span>5</span></button>
+                    <button class="btn-icon"><i class='bx bx-dislike'></i> <span>5</span></button>
+                </div>
+            </div>
+            </div>
+            </div>
+            
+        </section>
+
+            <section class="product-suggestions">
+                <h2>You might also like</h2>
+                <div class="suggestions-scroll-container">
+                    <div class="suggestion-card"><div class="image-placeholder"></div><div class="room-id-badge small">ID: 458219</div><div class="text-content"><h4>Room 2</h4><p>₹15,999</p></div></div>
+                    <div class="suggestion-card"><div class="image-placeholder"></div><div class="room-id-badge small">ID: 987345</div><div class="text-content"><h4>Room 3</h4><p>₹14,599</p></div></div>
+                    <div class="suggestion-card"><div class="image-placeholder"></div><div class="room-id-badge small">ID: 321654</div><div class="text-content"><h4>Room 4</h4><p>₹10,499</p></div></div>
+                    <div class="suggestion-card"><div class="image-placeholder"></div><div class="room-id-badge small">ID: 321654</div><div class="text-content"><h4>Room 5</h4><p>₹10,499</p></div></div>
+                    <div class="suggestion-card"><div class="image-placeholder"></div><div class="room-id-badge small">ID: 321654</div><div class="text-content"><h4>Room 6</h4><p>₹10,499</p></div></div>
+                    <div class="suggestion-card"><div class="image-placeholder"></div><div class="room-id-badge small">ID: 321654</div><div class="text-content"><h4>Room 7</h4><p>₹10,499</p></div></div>
+                    <div class="suggestion-card"><div class="image-placeholder"></div><div class="room-id-badge small">ID: 321654</div><div class="text-content"><h4>Room 8</h4><p>₹10,499</p></div></div>
+                    <div class="suggestion-card"><div class="image-placeholder"></div><div class="room-id-badge small">ID: 321654</div><div class="text-content"><h4>Room 9</h4><p>₹10,499</p></div></div>
+                    <div class="suggestion-card"><div class="image-placeholder"></div><div class="room-id-badge small">ID: 321654</div><div class="text-content"><h4>Room 10</h4><p>₹10,499</p></div></div>
+                </div>
+            </section>
+        </main>
+    </section>
+    
+    <div id="backdrop" class="backdrop"></div>
+
+    <script src="shop2.js"></script>
+    </script>
+</body>
+</html>
