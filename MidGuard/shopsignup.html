@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp - YourShop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="stylesignup.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <div class="signup-container">
+        <div class="header-section">
+            <h2>Create Your Account</h2>
+            <p>Step into the future of shopping with us.</p>
+        </div>
+        <div class="form-body">
+            <div class="form-column">
+                <form id="signupForm" novalidate>
+                    <div class="input-group"><i class="fas fa-user"></i><input type="text" id="fullName" name="fullName" placeholder="Full Name" required /></div>
+                    <div class="input-group"><i class="fas fa-envelope"></i><input type="email" id="email" name="email" placeholder="Your Email" required /></div>
+                    <div class="input-group"><i class="fas fa-phone"></i><input type="tel" id="phone" name="phone" placeholder="Phone Number" required /></div>
+                    <div class="input-group"><i class="fas fa-calendar-alt"></i><input type="text" id="dob" name="dob" placeholder="Date of Birth" required onfocus="(this.type='date')" onblur="(this.type='text')" max="9999-12-31" /></div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Create Password Eg.Abcd@123" required />
+                        <span class="fas fa-eye-slash toggle-password-icon" id="togglePassword"></span>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required />
+                        <span class="fas fa-eye-slash toggle-password-icon" id="toggleConfirmPassword"></span>
+                    </div>
+                    <p class="error-message" id="signupError"></p>
+                    <button type="submit" class="signup-btn">Create Account</button>
+                </form>
+            </div>
+            <div class="divider"><div class="divider-line"></div><span>OR</span><div class="divider-line"></div></div>
+            <div class="social-column">
+                <p class="social-text">Sign up with a single click</p>
+                <a href="#" class="social-btn google"><i class="fab fa-google"></i>Sign Up with Google</a>
+                <a href="#" class="social-btn facebook"><i class="fab fa-facebook"></i>Sign Up with Facebook</a>
+                <a href="#" class="social-btn apple"><i class="fab fa-apple"></i>Sign Up with Apple</a>
+                <p class="login-link">Already have an account? <a href="shoplogin.html">Login Now</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const signupForm = document.getElementById('signupForm');
+            const errorMessage = document.getElementById('signupError');
+
+            const passwordInput = document.getElementById('password');
+            const togglePasswordIcon = document.getElementById('togglePassword');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+            const toggleConfirmPasswordIcon = document.getElementById('toggleConfirmPassword');
+
+            function toggleVisibility(input, icon) {
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                } else {
+                    input.type = 'password';
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                }
+            }
+            togglePasswordIcon.addEventListener('click', () => toggleVisibility(passwordInput, togglePasswordIcon));
+            toggleConfirmPasswordIcon.addEventListener('click', () => toggleVisibility(confirmPasswordInput, toggleConfirmPasswordIcon));
+
+            signupForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                errorMessage.textContent = '';
+                errorMessage.style.display = 'none';
+
+                const fullName = document.getElementById('fullName').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const dob = document.getElementById('dob').value.trim();
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+
+                const nameRegex = /^[A-Za-z\s]+$/;
+                const emailRegex = /^[a-zA-Z0-9._-]+@[a-z]+\.[a-z]{2,6}$/;
+                const phoneRegex = /^\d+$/;
+                const dobRegex = /^\d{4}-\d{2}-\d{2}$/;
+                const uppercaseRegex = /[A-Z]/;
+                const lowercaseRegex = /[a-z]/;
+                const numberRegex = /[0-9]/;
+                const symbolRegex = /[^A-Za-z0-9]/;
+
+                if (!fullName || !email || !phone || !dob || !password || !confirmPassword) {
+                    showError('Please fill out all fields.');
+                    return;
+                }
+                if (!nameRegex.test(fullName)) {
+                    showError('Full Name can only contain letters and spaces.');
+                    return;
+                }
+                if (!emailRegex.test(email)) {
+                    showError('Please enter a valid email address.');
+                    return;
+                }
+                if (!phoneRegex.test(phone)) {
+                    showError('Phone Number can only contain numbers.');
+                    return;
+                }
+                if (phone.length < 10) {
+                    showError('Phone Number must contains at least 10 digits.');
+                    return;
+                }
+                if (password.length < 8) {
+                    showError('Password must be at least 8 characters long.');
+                    return;
+                }
+                if (!uppercaseRegex.test(password)) {
+                    showError('Password must contain at least one uppercase letter.');
+                    return;
+                }
+                if (!lowercaseRegex.test(password)) {
+                    showError('Password must contain at least one lowercase letter.');
+                    return;
+                }
+                if (!numberRegex.test(password)) {
+                    showError('Password must contain at least one number.');
+                    return;
+                }
+                if (!symbolRegex.test(password)) {
+                    showError('Password must contain at least one special symbol (e.g., !@#$).');
+                    return;
+                }
+                if (password !== confirmPassword) {
+                    showError('Passwords do not match.');
+                    return;
+                }
+
+                alert('Sign-up successful! Your account is now secure.');
+                signupForm.reset();
+            });
+
+            function showError(message) {
+                errorMessage.textContent = message;
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - MidGuard</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <link rel="stylesheet" href="shop2.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image"><img src="logo.jpeg" alt="MidGuard Logo"></span>
+                <div class="text logo-text"><span class="name">MidGuard</span><span class="profession">Shop</span></div>
+            </div>
+            <i class='bx bx-chevron-left toggle'></i>
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link"><a href="index.html"><i class='bx bx-store-alt icon'></i><span class="text nav-text">Discover</span></a></li>
+                    <li class="nav-link"><a href="orders.html"><i class='bx bx-package icon'></i><span class="text nav-text">My Orders</span></a></li>
+                    <li class="nav-link"><a href="listed_order.html"><i class='bx bx-list-check icon'></i><span class="text nav-text">Listed Orders</span></a></li>
+                    <li class="nav-link"><a href="watchlist.html"><i class='bx bx-heart icon'></i><span class="text nav-text">Wishlist</span></a></li>
+                    <li class="nav-link"><a href="settings.html"><i class='bx bx-cog icon'></i><span class="text nav-text">Settings</span></a></li>
+                    <li class="nav-link"><a href="about.html" class="active"><i class='bx bx-info-circle icon'></i><span class="text nav-text">About Us</span></a></li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <li class="profile">
+                <a href="shopsignup.html">
+                    <div class="profile-details">
+                        <i class='bx bx-user-circle icon'></i>
+                        <img src="https://placehold.co/40x40/695CFE/FFFFFF?text=BG" alt="Profile Picture">
+                        <div class="text">
+                            <span class="name">Baibhab Ghosh</span>
+                            <span class="profession">Shop</span>
+                        </div>
+                    </div>
+                    <i class='bx bx-log-in logout-icon'></i>
+                </a>
+            </li>
+                <li class="mode">
+                    <div class="sun-moon"><i class='bx bx-moon icon moon'></i><i class='bx bx-sun icon sun'></i></div>
+                    <span class="mode-text text">Dark Mode</span>
+                    <div class="toggle-switch"><span class="switch"></span></div>
+                </li>
+             </div>    
+           </div>
+        </div>
+    </nav>
+
+    <section class="home">
+        <header class="top-navbar">
+            <div class="navbar-content">
+                <div class="left-content">
+                    <button class="menu-btn" id="menuBtn" aria-label="Toggle Sidebar"><i class='bx bx-menu'></i></button>
+                    <div class="page-title">About MidGuard</div>
+                </div>
+                <div class="header-search-box">
+                    <i class='bx bx-search icon'></i><input type="text" placeholder="Search...">
+                </div>
+                <div class="right-content">
+                    <a href="account.html" class="nav-icon" aria-label="Account"><i class='bx bx-user-circle'></i></a>
+                    <a href="cart.html" class="nav-icon" aria-label="Cart"><i class='bx bx-cart'></i></a>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="about-header">
+                <h2>Protecting What <span class="gradient-text">Matters Most</span></h2>
+            </div>
+            <div class="about-card glass-card">
+                <div class="about-content">
+                    <p>MidGuard is your trusted partner in home security, dedicated to providing top-notch security solutions to protect what matters most to you. With a commitment to innovation and customer satisfaction, we offer a range of products and services designed to keep your home safe and secure.</p>
+                    <p>Our team of experts works tirelessly to develop cutting-edge technology that ensures your peace of mind. From state-of-the-art alarm systems to advanced surveillance cameras, we have everything you need to create a secure environment for your family.</p>
+                    <p>At MidGuard, we believe that security should be accessible to everyone. That's why we offer affordable pricing options without compromising on quality. Our goal is to make home security easy and convenient for all our customers.</p>
+                    <p>Customer satisfaction is at the heart of everything we do. We pride ourselves on delivering exceptional service and support, ensuring that our customers feel confident and protected at all times.</p>
+                    <p>Thank you for choosing MidGuard as your home security provider. We look forward to helping you safeguard your home and loved ones with our reliable and innovative solutions.</p>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <div id="backdrop" class="backdrop"></div>
+    <script src="shop2.js"></script>
+</body>
+</html>
