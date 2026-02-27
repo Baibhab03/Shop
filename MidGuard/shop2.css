@@ -880,6 +880,55 @@ body.dark .header-search-box input {
     .id{
         font-size: 10px;
     }
+    .sidebar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        height: 100vh !important;
+        width: 260px !important;
+        transform: translateX(-100%) !important; 
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        z-index: 10000 !important;
+        overflow: visible !important;
+        visibility: visible !important;
+    }
+
+    .sidebar.open {
+        transform: translateX(0) !important;
+    }
+
+    .sidebar header .toggle {
+        display: none !important; 
+    }
+
+    .sidebar.open .toggle {
+        display: flex !important;
+        position: absolute !important;
+        top: 5px !important;
+        left: 228px !important;
+        width: 35px;
+        height: 35px;
+        background: var(--primary-color, #6f42c1) !important;
+        color: #fff !important;
+        border-radius: 50% !important;
+        z-index: 10002 !important;
+        transform: rotate(180deg) !important; 
+    }
+
+    .nav-menu-btn {
+        display: block !important;
+        position: fixed !important;
+        top: 15px !important;
+        left: 15px !important;
+        font-size: 28px !important;
+        cursor: pointer !important;
+        z-index: 9998 !important;
+        color: var(--text-color) !important;
+    }
+
+    .sidebar.open ~ .nav-menu-btn {
+        display: none !important;
+    }
     .product-grid:hover,
     .product-card:hover, 
     .cart-item:hover, 
@@ -893,7 +942,6 @@ body.dark .header-search-box input {
     .floating-btn:hover,
     .quick-view-btn:hover,
     .sidebar li a:hover,
-    .sidebar header .toggle:hover ,
     .nav-icon:hover,
     .mode .sun-moon i:hover,
     .btn-icon:hover ,
