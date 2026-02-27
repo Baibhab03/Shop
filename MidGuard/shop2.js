@@ -4,33 +4,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const backdrop = document.getElementById('backdrop');
 
     // --- SIDEBAR LOGIC (FINAL, CORRECTED VERSION) ---
-    if (sidebar) {
-        const toggle = sidebar.querySelector(".toggle");
-        const menuBtn = document.getElementById('menuBtn');
+    // --- UNIFIED SIDEBAR LOGIC (REPLACEMENT) ---
+if (sidebar) {
+    const toggle = sidebar.querySelector(".toggle"); // Purple Arrow
+    const menuBtn = document.getElementById('menuBtn'); // 3-line Hamburger
+    const body = document.body;
 
-        const toggleSidebar = () => {
-            const isMobile = window.innerWidth <= 768;
+    // 1. Explicit Open Function
+    const openSidebar = () => {
+        sidebar.classList.remove('close');
+        sidebar.classList.add('open');
+        if (backdrop) backdrop.classList.add('active');
+        body.classList.add('modal-open');
+    };
 
-            if (isMobile) {
-                sidebar.classList.remove('close');
-                sidebar.classList.toggle('open');
-                if (backdrop) backdrop.classList.toggle('active');
-                body.classList.toggle('modal-open');
-            } else {
-                sidebar.classList.remove('open');
-                sidebar.classList.toggle('close');
-            }
-        };
+    // 2. Explicit Close Function
+    const closeSidebar = () => {
+        sidebar.classList.remove('open');
+        sidebar.classList.add('close');
+        if (backdrop) backdrop.classList.remove('active');
+        body.classList.remove('modal-open');
+    };
 
-        toggle?.addEventListener('click', toggleSidebar);
-        menuBtn?.addEventListener('click', toggleSidebar);
-        backdrop?.addEventListener('click', () => {
-            if (sidebar.classList.contains('open')) toggleSidebar();
-        });
-        document.addEventListener("keydown", e => {
-            if (e.key === "Escape" && sidebar.classList.contains("open")) toggleSidebar();
-        });
-    }
+    // 3. Assign Actions
+    // Desktop & Mobile: Purple Arrow toggles/closes
+    toggle?.addEventListener('click', () => {
+        if (window.innerWidth <= 992) {
+            closeSidebar();
+        } else {
+            sidebar.classList.toggle('close');
+        }
+    });
+
+    // Mobile Only: Hamburger opens
+    menuBtn?.addEventListener('click', openSidebar);
+
+    // Backdrop & Escape Key (Closes everything)
+    backdrop?.addEventListener('click', closeSidebar);
+    document.addEventListener("keydown", e => {
+        if (e.key === "Escape") closeSidebar();
+    });
+}
 
     // --- UNIFIED DARK MODE LOGIC ---
     if (sidebar) {
