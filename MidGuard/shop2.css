@@ -904,7 +904,7 @@ body.dark .header-search-box input {
     .sidebar.open .toggle {
         display: flex !important;
         position: absolute !important;
-        top: 5px !important;
+        top: 25px !important;
         left: 228px !important;
         width: 35px;
         height: 35px;
@@ -912,7 +912,6 @@ body.dark .header-search-box input {
         color: #fff !important;
         border-radius: 50% !important;
         z-index: 10002 !important;
-        transform: rotate(180deg) !important; 
     }
 
     .nav-menu-btn {
@@ -986,3 +985,4 @@ body.dark .header-search-box input {
         padding-right: 20px;
     }
 }
+
