@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Orders - MidGuard</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
+
     <link rel="stylesheet" href="shop2.css">
     <link rel="stylesheet" href="order.css">
 </head>
+
 <body>
 
     <nav class="sidebar close">
@@ -26,34 +29,39 @@
         <div class="menu-bar">
             <div class="menu">
                 <ul class="menu-links">
-                    <li class="nav-link"><a href="index.html"><i class='bx bx-store-alt icon'></i><span class="text nav-text">Discover</span></a></li>
-                    <li class="nav-link"><a href="order.html" class="active"><i class='bx bx-package icon'></i><span class="text nav-text">My Orders</span></a></li>
-                    <li class="nav-link"><a href="listed_order.html"><i class='bx bx-list-check icon'></i><span class="text nav-text">Listed Orders</span></a></li>
-                    <li class="nav-link"><a href="wishlist.html"><i class='bx bx-heart icon'></i><span class="text nav-text">Wishlist</span></a></li>
-                    <li class="nav-link"><a href="settings.html"><i class='bx bx-cog icon'></i><span class="text nav-text">Settings</span></a></li>
+                    <li class="nav-link"><a href="index.html"><i class='bx bx-store-alt icon'></i><span
+                                class="text nav-text">Discover</span></a></li>
+                    <li class="nav-link"><a href="order.html" class="active"><i class='bx bx-package icon'></i><span
+                                class="text nav-text">My Orders</span></a></li>
+                    <li class="nav-link"><a href="listed_order.html"><i class='bx bx-list-check icon'></i><span
+                                class="text nav-text">Listed Orders</span></a></li>
+                    <li class="nav-link"><a href="wishlist.html"><i class='bx bx-heart icon'></i><span
+                                class="text nav-text">Wishlist</span></a></li>
+                    <li class="nav-link"><a href="settings.html"><i class='bx bx-cog icon'></i><span
+                                class="text nav-text">Settings</span></a></li>
                 </ul>
             </div>
             <div class="bottom-content">
-              <li class="profile">
-                <a href="shopsignup.html">
-                    <div class="profile-details">
-                        <i class='bx bx-user-circle icon'></i>
-                        <img src="https://placehold.co/40x40/695CFE/FFFFFF?text=BG" alt="Profile Picture">
-                        <div class="text">
-                            <span class="name">Baibhab Ghosh</span>
-                            <span class="profession">Shop</span>
+                <li class="profile">
+                    <a href="shopsignup.html">
+                        <div class="profile-details">
+                            <i class='bx bx-user-circle icon'></i>
+                            <img src="https://placehold.co/40x40/695CFE/FFFFFF?text=BG" alt="Profile Picture">
+                            <div class="text">
+                                <span class="name">Baibhab Ghosh</span>
+                                <span class="profession">Shop</span>
+                            </div>
                         </div>
-                    </div>
-                    <i class='bx bx-log-in logout-icon'></i>
-                </a>
-            </li>
+                        <i class='bx bx-log-in logout-icon'></i>
+                    </a>
+                </li>
                 <li class="mode">
                     <div class="sun-moon"><i class='bx bx-moon icon moon'></i><i class='bx bx-sun icon sun'></i></div>
                     <span class="mode-text text">Dark Mode</span>
                     <div class="toggle-switch"><span class="switch"></span></div>
                 </li>
             </div>
-          </div>
+        </div>
         </div>
     </nav>
 
@@ -61,7 +69,8 @@
         <header class="top-navbar">
             <div class="navbar-content">
                 <div class="left-content">
-                    <button class="menu-btn" id="menuBtn" aria-label="Toggle Sidebar"><i class='bx bx-menu'></i></button>
+                    <button class="menu-btn" id="menuBtn" aria-label="Toggle Sidebar"><i
+                            class='bx bx-menu'></i></button>
                     <div class="page-title">My Orders</div>
                 </div>
                 <div class="header-search-box">
@@ -77,52 +86,33 @@
         <main class="main-content orders-page">
             <div class="orders-header">
                 <div class="header-left">
-                    <h1>Your orders</h1>
-                    <div class="filter-tabs">
-                        <button class="filter-btn active" data-filter="all">Orders</button>
+                    <h1>Your Orders</h1>
+                    <div class="filter-tabs" id="orderFilterTabs">
+                        <button class="filter-btn active" data-filter="all">All Orders</button>
                         <button class="filter-btn" data-filter="shipped">Shipped</button>
-                        <button class="filter-btn" data-filter="not-shipped">Not yet shipped</button>
+                        <button class="filter-btn" data-filter="processing">Processing</button>
                     </div>
                 </div>
                 <div class="header-right">
                     <div class="order-search-box">
                         <i class='bx bx-search'></i>
-                        <input type="text" placeholder="Search Tranx ID">
+                        <input type="text" id="orderSearchInput" placeholder="Search Tranx ID...">
                     </div>
                 </div>
             </div>
 
-            <div class="orders-list">
-                <div class="order-card card">
-                    <div class="order-card-header">
-                        <div class="info-group"><span>Order Placed</span><p>2 Oct 2025</p></div>
-                        <div class="info-group"><span>Total</span><p>₹49,999</p></div>
-                        <div class="info-group"><span>Ship To</span><p>Baibhab Ghosh</p></div>
-                        <div class="info-group"><span>Ship From</span><p>XYZ Seller</p></div>
-                        <div class="info-group id-group"><span>TRANX ID:- #121212121</span><a href="#">Invoice +</a></div>
-                    </div>
-                    <div class="order-card-body" data-filter="Orders">
-                        <div class="item-details">
-                            <p class="delivery-status"><strong>Delivered XYZ, 20XX</strong></p>
-                            <div class="product-info">
-                                <div class="product-image"></div>
-                                <div class="product-details">
-                                    <p class="product-name">Samsung Galaxy Watch 8 Classic LTE</p>
-                                    <p class="return-window">Return window closed on XYZ, 20XX</p>
-                                    <div class="issue-buttons">
-                                        <a href="#" class="btn-secondary">Legitimate</a>
-                                        <a href="#" class="btn-secondary">Raise issue</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-primary">Seller Info</a>
-                            <a href="#" class="btn-secondary">Write Review</a>
-                            <a href="#" class="btn-tertiary">Cancel Order</a>
-                        </div>
-                    </div>
+            <div id="ordersContainer" class="orders-list"></div>
+
+            <div id="empty-orders" class="empty-state-container hidden">
+                <div class="empty-state-icon">
+                    <i class='bx bx-package'></i>
                 </div>
+                <h2>No orders placed yet</h2>
+                <p>Looks like you haven't made your first purchase. Explore our collection and find something amazing!
+                </p>
+                <a href="index.html" class="btn-primary" style="display:inline-flex; align-items:center; gap:8px;">
+                    Start Shopping <i class='bx bx-right-arrow-alt'></i>
+                </a>
             </div>
         </main>
     </section>
@@ -130,4 +120,5 @@
     <div id="backdrop" class="backdrop"></div>
     <script src="shop2.js"></script>
 </body>
+
 </html>

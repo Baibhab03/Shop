@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings - MidGuard</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
+
     <link rel="stylesheet" href="shop2.css">
     <link rel="stylesheet" href="settings.css">
 </head>
+
 <body>
 
     <nav class="sidebar close">
@@ -30,12 +33,18 @@
         <div class="menu-bar">
             <div class="menu">
                 <ul class="menu-links">
-                    <li class="nav-link"><a href="index.html"><i class='bx bx-store-alt icon'></i><span class="text nav-text">Discover</span></a></li>
-                    <li class="nav-link"><a href="order.html"><i class='bx bx-package icon'></i><span class="text nav-text">My Orders</span></a></li>
-                    <li class="nav-link"><a href="listed_order.html"><i class='bx bx-list-check icon'></i><span class="text nav-text">Listed Orders</span></a></li>
-                    <li class="nav-link"><a href="wishlist.html"><i class='bx bx-heart icon'></i><span class="text nav-text">Wishlist</span></a></li>
-                    <li class="nav-link"><a href="settings.html" class="active"><i class='bx bx-cog icon'></i><span class="text nav-text">Settings</span></a></li>
-                    <li class="nav-link"><a href="policy.html"><i class='bx bx-headphone icon'></i><span class="text nav-text">Support</span></a></li>
+                    <li class="nav-link"><a href="index.html"><i class='bx bx-store-alt icon'></i><span
+                                class="text nav-text">Discover</span></a></li>
+                    <li class="nav-link"><a href="order.html"><i class='bx bx-package icon'></i><span
+                                class="text nav-text">My Orders</span></a></li>
+                    <li class="nav-link"><a href="listed_order.html"><i class='bx bx-list-check icon'></i><span
+                                class="text nav-text">Listed Orders</span></a></li>
+                    <li class="nav-link"><a href="wishlist.html"><i class='bx bx-heart icon'></i><span
+                                class="text nav-text">Wishlist</span></a></li>
+                    <li class="nav-link"><a href="settings.html" class="active"><i class='bx bx-cog icon'></i><span
+                                class="text nav-text">Settings</span></a></li>
+                    <li class="nav-link"><a href="policy.html"><i class='bx bx-headphone icon'></i><span
+                                class="text nav-text">Support</span></a></li>
                 </ul>
             </div>
             <div class="bottom-content">
@@ -65,7 +74,8 @@
         <header class="top-navbar">
             <div class="navbar-content">
                 <div class="left-content">
-                    <button class="menu-btn" id="menuBtn" aria-label="Toggle Sidebar"><i class='bx bx-menu'></i></button>
+                    <button class="menu-btn" id="menuBtn" aria-label="Toggle Sidebar"><i
+                            class='bx bx-menu'></i></button>
                     <div class="page-title">Settings</div>
                 </div>
                 <div class="header-search-box">
@@ -79,56 +89,101 @@
         </header>
 
         <main class="main-content">
-            <div class="settings-card glass-card">
-                <h2 class="card-title">Appearance</h2>
-                <div class="setting-item">
-                    <div class="setting-label">
-                        <h3>Theme</h3>
-                        <p>Customize your visual experience.</p>
-                    </div>
-                    <div class="segmented-control">
-                        <input type="radio" id="theme-light" name="theme-option" value="light"><label for="theme-light">Light</label>
-                        <input type="radio" id="theme-dark" name="theme-option" value="dark"><label for="theme-dark">Dark</label>
+            <div class="settings-container">
+                <div class="settings-card glass-card">
+                    <h2 class="card-title"><i class='bx bx-palette'></i> Appearance</h2>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <h3>Theme Mode</h3>
+                            <p>Customize your visual experience for day or night.</p>
+                        </div>
+                        <div class="segmented-control">
+                            <input type="radio" id="theme-light" name="theme-option" value="light">
+                            <label for="theme-light">Light</label>
+                            <input type="radio" id="theme-dark" name="theme-option" value="dark">
+                            <label for="theme-dark">Dark</label>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="settings-card glass-card">
-                <h2 class="card-title">Notifications</h2>
-                <div class="setting-item">
-                    <div class="setting-label">
-                        <h3>Promotional Offers</h3>
-                        <p>Receive updates on sales and special deals.</p>
+                <div class="settings-card glass-card">
+                    <h2 class="card-title"><i class='bx bx-bell'></i> Notifications</h2>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <h3>Marketing Emails</h3>
+                            <p>Receive updates on sales and special deals.</p>
+                        </div>
+                        <label class="form-toggle-switch"><input type="checkbox" id="notify-marketing" checked><span
+                                class="slider"></span></label>
                     </div>
-                    <label class="form-toggle-switch"><input type="checkbox" checked><span class="slider"></span></label>
-                </div>
-                <div class="setting-item">
-                    <div class="setting-label">
-                        <h3>Order Updates</h3>
-                        <p>Get notified about your order status.</p>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <h3>Order Tracking</h3>
+                            <p>Get real-time push notifications for your orders.</p>
+                        </div>
+                        <label class="form-toggle-switch"><input type="checkbox" id="notify-orders" checked><span
+                                class="slider"></span></label>
                     </div>
-                    <label class="form-toggle-switch"><input type="checkbox" checked><span class="slider"></span></label>
                 </div>
-            </div>
 
-            <div class="settings-card glass-card">
-                <h2 class="card-title">Account & Legal</h2>
-                <a href="#" class="setting-link">
-                    <div class="setting-label"><h3>Edit Profile</h3></div><i class='bx bx-chevron-right'></i>
-                </a>
-                <a href="#" class="setting-link">
-                    <div class="setting-label"><h3>Manage Addresses</h3></div><i class='bx bx-chevron-right'></i>
-                </a>
-                <a href="about.html" class="setting-link">
-                    <div class="setting-label"><h3>About Us</h3></div><i class='bx bx-chevron-right'></i>
-                </a>
+                <div class="settings-card glass-card">
+                    <h2 class="card-title"><i class='bx bx-shield-alt-2'></i> Privacy & Security</h2>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <h3>Two-Factor Authentication</h3>
+                            <p>Add an extra layer of security to your account.</p>
+                        </div>
+                        <button class="btn-small">Enable</button>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <h3>Active Sessions</h3>
+                            <p>Manage devices currently logged into MidGuard.</p>
+                        </div>
+                        <a href="#" class="view-link">View All</a>
+                    </div>
+                </div>
 
-                <a href="policy.html" class="setting-link">
-                    <div class="setting-label"><h3>Privacy Policy & Terms</h3></div><i class='bx bx-chevron-right'></i>
-                </a>
-                <a href="#" class="setting-link logout">
-                    <div class="setting-label"><h3>Logout</h3></div><i class='bx bx-log-out'></i>
-                </a>
+                <div class="settings-card glass-card">
+                    <h2 class="card-title"><i class='bx bx-data'></i> Data Management</h2>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <h3>Clear Local Cache</h3>
+                            <p>Reset your Cart and Wishlist data (Internal use).</p>
+                        </div>
+                        <button class="btn-danger-outline" onclick="clearAppData()">Clear Data</button>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <h3>Download My Data</h3>
+                            <p>Get a copy of your profile and order history.</p>
+                        </div>
+                        <i class='bx bx-download' style="font-size: 1.5rem; cursor: pointer;"></i>
+                    </div>
+                </div>
+
+                <div class="settings-card glass-card">
+                    <h2 class="card-title"><i class='bx bx-info-circle'></i> Information</h2>
+                    <a href="account.html" class="setting-link">
+                        <div class="setting-label">
+                            <h3>Profile Details</h3>
+                            <p>Update your avatar and bio.</p>
+                        </div>
+                        <i class='bx bx-chevron-right'></i>
+                    </a>
+                    <a href="policy.html" class="setting-link">
+                        <div class="setting-label">
+                            <h3>Privacy Policy</h3>
+                        </div>
+                        <i class='bx bx-chevron-right'></i>
+                    </a>
+                    <a href="#" class="setting-link logout" onclick="handleLogout()">
+                        <div class="setting-label">
+                            <h3>Logout Account</h3>
+                        </div>
+                        <i class='bx bx-log-out-circle'></i>
+                    </a>
+                </div>
             </div>
         </main>
     </section>
@@ -136,4 +191,5 @@
     <div id="backdrop" class="backdrop"></div>
     <script src="shop2.js"></script>
 </body>
+
 </html>

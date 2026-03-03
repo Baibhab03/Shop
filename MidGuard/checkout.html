@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - MidGuard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="shop2.css">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image"><img src="logo.jpeg" alt="Logo"></span>
+                <div class="text logo-text">
+                    <span class="name">MidGuard</span>
+                    <span class="profession">Shop</span>
+                </div>
+            </div>
+            <i class='bx bx-chevron-left toggle'></i>
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link"><a href="index.html"><i class='bx bx-store-alt icon'></i><span
+                                class="text nav-text">Discover</span></a></li>
+                    <li class="nav-link"><a href="order.html"><i class='bx bx-package icon'></i><span
+                                class="text nav-text">My Orders</span></a></li>
+                    <li class="nav-link"><a href="listed_order.html"><i class='bx bx-list-check icon'></i><span
+                                class="text nav-text">Listed Orders</span></a></li>
+                    <li class="nav-link"><a href="wishlist.html"><i class='bx bx-heart icon'></i><span
+                                class="text nav-text">Wishlist</span></a></li>
+                    <li class="nav-link"><a href="settings.html"><i class='bx bx-cog icon'></i><span
+                                class="text nav-text">Settings</span></a></li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <li class="mode">
+                    <div class="sun-moon"><i class='bx bx-moon icon moon'></i><i class='bx bx-sun icon sun'></i></div>
+                    <span class="mode-text text">Dark Mode</span>
+                    <div class="toggle-switch"><span class="switch"></span></div>
+                </li>
+            </div>
+        </div>
+    </nav>
+    <section class="home">
+        <header class="top-navbar">
+            <div class="navbar-content">
+                <div class="left-content">
+                    <button class="menu-btn" id="menuBtn"><i class='bx bx-menu'></i></button>
+                    <div class="page-title">Secure Checkout</div>
+                </div>
+                <div class="right-content">
+                    <a href="account.html" class="nav-icon" aria-label="Account"><i class='bx bx-user-circle'></i></a>
+                    <a href="cart.html" class="nav-icon" aria-label="Cart"><i class='bx bx-cart'></i></a>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content checkout-page">
+            <div class="checkout-container">
+
+                <div class="checkout-forms">
+
+                    <div class="checkout-card">
+                        <div class="card-header">
+                            <div class="header-icon-box"><i class='bx bx-map-pin'></i></div>
+                            <h3>Delivery Address</h3>
+                        </div>
+
+                        <div id="dynamic-address-box" class="address-selection-box active">
+                            <div id="checkoutAddressContainer"></div>
+                                <p>No saved address found.</p>
+                                <a href="newAddress.html" class="btn-primary small-btn">+ Add Address</a>
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <a href="savedAddress.html" class="text-link">Manage Addresses</a>
+                        </div>
+                    </div>
+
+                    <div class="checkout-card">
+                        <div class="card-header">
+                            <div class="header-icon-box"><i class='bx bx-credit-card-front'></i></div>
+                            <h3>Payment Method</h3>
+                        </div>
+
+                        <div class="payment-options">
+                            <label class="pay-option">
+                                <div class="radio-wrapper">
+                                    <input type="radio" name="payment" value="cod" checked>
+                                    <span class="custom-radio"></span>
+                                </div>
+                                <div class="pay-details">
+                                    <span class="pay-title">Cash on Delivery</span>
+                                    <span class="pay-desc">Pay when your items arrive</span>
+                                </div>
+                                <i class='bx bx-money pay-icon'></i>
+                            </label>
+
+                            <label class="pay-option">
+                                <div class="radio-wrapper">
+                                    <input type="radio" name="payment" value="upi">
+                                    <span class="custom-radio"></span>
+                                </div>
+                                <div class="pay-details">
+                                    <span class="pay-title">UPI / QR Code</span>
+                                    <span class="pay-desc">Instant digital payment</span>
+                                </div>
+                                <i class='bx bx-qr-scan pay-icon'></i>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="checkout-card order-summary-card">
+                    <h3 class="summary-title">Order Summary</h3>
+
+                    <div id="checkout-items-list" class="summary-items-list">
+                    </div>
+
+                    <div class="price-breakdown">
+                        <div class="summary-line">
+                            <span class="text-muted">Subtotal</span>
+                            <span id="summary-subtotal" class="font-medium">₹0</span>
+                        </div>
+                        <div class="summary-line">
+                            <span class="text-muted">Shipping</span>
+                            <span id="summary-shipping" class="font-medium">₹0</span>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="summary-total">
+                            <span>Total Payable</span>
+                            <span id="summary-total" class="total-price">₹0</span>
+                        </div>
+                    </div>
+
+                   <button id="placeOrderBtn" class="btn-primary">Place Order <i class='bx bx-check-shield'></i>
+                   </button>
+                    <div class="secure-badge">
+                        <i class='bx bx-lock-alt'></i> Secure Checkout
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </section>
+
+    <div id="backdrop" class="backdrop"></div>
+    <script src="shop2.js"></script>
+</body>
+
+</html>

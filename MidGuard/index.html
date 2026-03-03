@@ -14,7 +14,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel="stylesheet" href="shop2.css">
-    <link rel="stylesheet" href="joinroom.css">
+    <!-- <link rel="stylesheet" href="joinroom.css"> -->
 </head>
 
 <body>
@@ -76,8 +76,8 @@
         <header class="top-navbar">
             <div class="navbar-content">
                 <div class="left-content">
-                    <button class="menu-btn" id="menuBtn" aria-label="Toggle Sidebar"><i
-                            class='bx bx-menu'></i></button>
+                    <button class="menu-btn" id="menuBtn" aria-label="Toggle Sidebar">
+                        <i class='bx bx-menu'></i></button>
                     <div class="page-title">Discover</div>
                 </div>
                 <div class="header-search-box">
@@ -109,122 +109,151 @@
             </div>
 
             <div class="product-grid">
-                <div class="product-card" data-category="watch" data-name="Samsung Galaxy Watch 8 Classic" data-price="₹49,999">
-                    <a href="product.html">
-                        <div class="card-image-container">
-                            <img src="https://m.media-amazon.com/images/I/81JhHZ4XSpL._SX679_.jpg"
-                                alt="Samsung Galaxy Watch 8 Classic">
-                        </div>
-                        <div class="card-body">
+
+                <div class="product-card" data-category="watch" data-name="Samsung Galaxy Watch 8 Classic"
+                    data-price="₹34,999">
+                    <div class="card-image-container">
+                        <a href="product.html?id=1" style="display: block; width: 100%; height: 100%;">
+                            <img src="https://m.media-amazon.com/images/I/81JhHZ4XSpL._SX679_.jpg" alt="Watch">
+                        </a>
+                        <button class="quick-view-btn" data-id="1" aria-label="Quick View"><i class='bx bx-show'></i>
+                            Quick View</button>
+                    </div>
+                    <div class="card-body">
+                        <a href="product.html?id=1" style="text-decoration: none;">
                             <h3 class="product-title-link">Samsung Galaxy Watch 8 Classic</h3>
-                            <span class="price">₹49,999</span>
-                        </div>
-                    </a>
+                            <span class="price">₹34,999</span>
+                        </a>
+                    </div>
                     <div class="card-actions">
                         <button class="btn-primary add-to-cart-btn"><span class="btn-text default-text">Add to
-                                Cart</span>
-                            <span class="btn-text added-text">Added <i class='bx bx-check'></i></span></button>
+                                Cart</span><span class="btn-text added-text">Added <i
+                                    class='bx bx-check'></i></span></button>
                         <button class="btn-icon wishlist-btn"><i class='bx bx-heart'></i></button>
                     </div>
                 </div>
 
                 <div class="product-card" data-category="shoes" data-name="Nike Shoes" data-price="₹2,499">
-                    <a href="#">
-                        <div class="card-image-container">
+                    <div class="card-image-container">
+                        <a href="product.html?id=2" style="display: block; width: 100%; height: 100%;">
                             <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop"
-                                alt="Nike Shoes">
-                        </div>
-                        <div class="card-body">
+                                alt="Shoes">
+                        </a>
+                        <button class="quick-view-btn" data-id="2" aria-label="Quick View"><i class='bx bx-show'></i>
+                            Quick View</button>
+                    </div>
+                    <div class="card-body">
+                        <a href="product.html?id=2" style="text-decoration: none;">
                             <h3>Nike Shoes</h3>
                             <span class="price">₹2,499</span>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                     <div class="card-actions">
                         <button class="btn-primary add-to-cart-btn"><span class="btn-text default-text">Add to
-                                Cart</span>
-                            <span class="btn-text added-text">Added <i class='bx bx-check'></i></span></button>
+                                Cart</span><span class="btn-text added-text">Added <i
+                                    class='bx bx-check'></i></span></button>
                         <button class="btn-icon wishlist-btn"><i class='bx bx-heart'></i></button>
                     </div>
                 </div>
+
                 <div class="product-card" data-category="sunglasses" data-name="Ray-Ban Sunglasses" data-price="₹3,999">
-                    <a href="#">
-                        <div class="card-image-container">
-                            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&id=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3VuZ2xhc3Nlc3xlbnwwfHwwfHx8MA%3D%3D" alt="Sunglasses">
-                        </div>
-                        <div class="card-body">
+                    <div class="card-image-container">
+                        <a href="product.html?id=3" style="display: block; width: 100%; height: 100%;">
+                            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+                                alt="Sunglasses">
+                        </a>
+                        <button class="quick-view-btn" data-id="3" aria-label="Quick View"><i class='bx bx-show'></i>
+                            Quick View</button>
+                    </div>
+                    <div class="card-body">
+                        <a href="product.html?id=3" style="text-decoration: none;">
                             <h3>Ray-Ban Sunglasses</h3>
                             <span class="price">₹3,999</span>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                     <div class="card-actions">
                         <button class="btn-primary add-to-cart-btn"><span class="btn-text default-text">Add to
-                                Cart</span>
-                            <span class="btn-text added-text">Added <i class='bx bx-check'></i></span></button>
+                                Cart</span><span class="btn-text added-text">Added <i
+                                    class='bx bx-check'></i></span></button>
                         <button class="btn-icon wishlist-btn"><i class='bx bx-heart'></i></button>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="laptop" data-name="MacBook Pro" data-price="₹1,29,900">
-                    <a href="#">
-                        <div class="card-image-container">
+                <div class="product-card" data-category="laptop" data-name="MacBook Pro" data-price="₹1,24,900">
+                    <div class="card-image-container">
+                        <a href="product.html?id=4" style="display: block; width: 100%; height: 100%;">
                             <img src="https://m.media-amazon.com/images/I/615tKndaduL._SX679_.jpg" alt="MacBook Pro">
-                        </div>
-                        <div class="card-body">
-                            <h3>Apple 2025 MacBook Pro Laptop with M5 chip, 10‑core CPU and 10‑core GPU: Built for Apple Intelligence, 35.97 cm (14.2″) Liquid Retina XDR Display, 16GB Unified Memory, 512GB SSD Storage; Space Black</h3>
-                            <span class="price">₹1,29,900</span>
-                        </div>
-                    </a>
+                        </a>
+                        <button class="quick-view-btn" data-id="4" aria-label="Quick View"><i class='bx bx-show'></i>
+                            Quick View</button>
+                    </div>
+                    <div class="card-body">
+                        <a href="product.html?id=4" style="text-decoration: none;">
+                            <h3>Apple 2025 MacBook Pro Laptop with M5 chip, 10‑core CPU...</h3>
+                            <span class="price">₹1,24,900</span>
+                        </a>
+                    </div>
                     <div class="card-actions">
                         <button class="btn-primary add-to-cart-btn"><span class="btn-text default-text">Add to
-                                Cart</span>
-                            <span class="btn-text added-text">Added <i class='bx bx-check'></i></span></button>
+                                Cart</span><span class="btn-text added-text">Added <i
+                                    class='bx bx-check'></i></span></button>
                         <button class="btn-icon wishlist-btn"><i class='bx bx-heart'></i></button>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="tv" data-name="Samsung 4K TV" data-price="₹34,999">
-                    <a href="#">
-                        <div class="card-image-container">
+                <div class="product-card" data-category="tv" data-name="Samsung 4K TV" data-price="₹36,999">
+                    <div class="card-image-container">
+                        <a href="product.html?id=5" style="display: block; width: 100%; height: 100%;">
                             <img src="https://m.media-amazon.com/images/I/81UGU8btwmL._SX679_.jpg" alt="Smart TV">
-                        </div>
-                        <div class="card-body">
-                            <h3>Samsung 125 cm (50 inches) Crystal 4K Vista Ultra HD Smart LED TV</h3>
+                        </a>
+                        <button class="quick-view-btn" data-id="5" aria-label="Quick View"><i class='bx bx-show'></i>
+                            Quick View</button>
+                    </div>
+                    <div class="card-body">
+                        <a href="product.html?id=5" style="text-decoration: none;">
+                            <h3>Samsung 125 cm (50 inches) Crystal 4K Vista Ultra HD Smart TV</h3>
                             <span class="price">₹36,999</span>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                     <div class="card-actions">
                         <button class="btn-primary add-to-cart-btn"><span class="btn-text default-text">Add to
-                                Cart</span>
-                            <span class="btn-text added-text">Added <i class='bx bx-check'></i></span></button>
+                                Cart</span><span class="btn-text added-text">Added <i
+                                    class='bx bx-check'></i></span></button>
                         <button class="btn-icon wishlist-btn"><i class='bx bx-heart'></i></button>
                     </div>
                 </div>
 
                 <div class="product-card" data-category="fridge" data-name="Samsung Fridge" data-price="₹19,499">
-                    <a href="#">
-                        <div class="card-image-container">
-                            <img src="https://m.media-amazon.com/images/I/71nQw1hLlZL._AC_UY436_FMwebp_QL65_.jpg" alt="Refrigerator">
-                        </div>
-                        <div class="card-body">
-                            <h3>215 L, 5 Star, Digital Inverter, Direct-Cool Single Door Refrigerator (RR23D2H359U/HL, Paradise Bloom Blue, Base Stand Drawer)</h3>
+                    <div class="card-image-container">
+                        <a href="product.html?id=6" style="display: block; width: 100%; height: 100%;">
+                            <img src="https://m.media-amazon.com/images/I/71nQw1hLlZL._AC_UY436_FMwebp_QL65_.jpg"
+                                alt="Refrigerator">
+                        </a>
+                        <button class="quick-view-btn" data-id="6" aria-label="Quick View"><i class='bx bx-show'></i>
+                            Quick View</button>
+                    </div>
+                    <div class="card-body">
+                        <a href="product.html?id=6" style="text-decoration: none;">
+                            <h3>Samsung 215 L, 5 Star, Digital Inverter, Direct-Cool Single Door Refrigerator</h3>
                             <span class="price">₹19,499</span>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                     <div class="card-actions">
                         <button class="btn-primary add-to-cart-btn"><span class="btn-text default-text">Add to
-                                Cart</span>
-                            <span class="btn-text added-text">Added <i class='bx bx-check'></i></span></button>
+                                Cart</span><span class="btn-text added-text">Added <i
+                                    class='bx bx-check'></i></span></button>
                         <button class="btn-icon wishlist-btn"><i class='bx bx-heart'></i></button>
                     </div>
                 </div>
+
             </div>
             <div id="no-products-message" class="no-results">
                 <i class='bx bx-search-alt'></i>
                 <h3>No products found</h3>
                 <p>Try adjusting your search or filters.</p>
             </div>
-        </div>
-    </main>
+            </div>
+        </main>
 
         <footer class="site-footer">
             <div class="footer-content">
@@ -256,24 +285,36 @@
         </div>
     </div> -->
 
-    <!-- <div class="modal" id="quickViewModal">
+    <div class="modal" id="quickViewModal" aria-hidden="true">
         <div class="modal-content">
             <button class="modal-close" id="modalCloseBtn" aria-label="Close modal"><i class='bx bx-x'></i></button>
             <div class="modal-body">
-                <div class="modal-image"><img src="" alt="Product Image"></div>
+                <div class="modal-image-container">
+                    <img src="" id="modalImage" alt="Product Image">
+                </div>
                 <div class="modal-details">
+                    <span class="modal-badge" id="modalBadge">Premium Selection</span>
                     <h2 id="modalProductName">Product Name</h2>
-                    <p class="modal-price" id="modalProductPrice">₹0.00</p>
-                    <p class="modal-description">Detailed product description goes here. Elevate your style with this finely crafted item, perfect for any occasion.</p>
-                    <div class="modal-actions">
-                        <button class="btn-primary add-to-cart-btn"><span class="btn-text default-text">Add to Cart</span><span class="btn-text added-text">Added <i class='bx bx-check'></i></span></button>
-                        <button class="btn-icon wishlist-btn" aria-label="Add to Wishlist"><i class='bx bx-heart'></i></button>
+                    <div class="modal-price-row">
+                        <p class="modal-price" id="modalProductPrice">₹0</p>
+                        <del class="modal-mrp" id="modalProductMRP">₹0</del>
                     </div>
+                    <p class="modal-description" id="modalProductDesc">Product description will load here.</p>
+
+                    <div class="modal-specs">
+                        <div class="spec-item"><i class='bx bx-shield-quarter'></i> <span
+                                id="modalWarranty">Warranty</span></div>
+                        <div class="spec-item"><i class='bx bx-package'></i> <span id="modalBox">Box Available</span>
+                        </div>
+                    </div>
+                <div id="modalActionsWrapper"></div>    
+                
+                    <a href="#" id="modalViewFull" class="view-full-link">View Full Details <i
+                            class='bx bx-right-arrow-alt'></i></a>
                 </div>
             </div>
         </div>
-    </div> -->
-
+    </div>
     <script src="shop2.js"></script>
 </body>
 

@@ -1,138 +1,211 @@
+/* =========================================
+   SETTINGS PAGE GLASS UI
+   ========================================= */
 .glass-card {
-    background: rgba(255, 255, 255, 0.45);
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: var(--card-bg-color);
+    border: 1px solid var(--toggle-color);
     box-shadow: 0 8px 32px 0 var(--shadow-color);
     border-radius: 24px;
-    color: var(--text-color);
-    padding: 25px 30px;
-    margin-bottom: 30px;
-}
-
-body.dark .glass-card {
-    background: rgba(30, 30, 30, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
 }
 
 .card-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid var(--toggle-color);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: block;
 }
 
-.setting-item {
+.setting-item,
+.setting-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 0;
+    padding: 20px 0;
     border-bottom: 1px solid var(--toggle-color);
 }
-.settings-card > .setting-item:last-of-type {
+
+.settings-card .setting-item:last-child,
+.settings-card .setting-link:last-child {
     border-bottom: none;
-}
-.setting-label h3 {
-    font-size: 1rem;
-    font-weight: 500;
-    margin: 0 0 4px;
-}
-.setting-label p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: var(--text-color);
-    opacity: 0.7;
+    padding-bottom: 0;
 }
 
+.setting-label h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 4px;
+}
+
+.setting-label p {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.6;
+}
+
+/* Segmented Control (iOS Style) */
 .segmented-control {
     display: flex;
-    background-color: var(--primary-color-light);
-    border-radius: 10px;
+    background: var(--primary-color-light);
     padding: 4px;
+    border-radius: 12px;
 }
+
 .segmented-control input[type="radio"] {
     display: none;
 }
+
 .segmented-control label {
-    padding: 8px 20px;
+    padding: 8px 18px;
     border-radius: 8px;
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 0.85rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s ease;
-}
-.segmented-control input[type="radio"]:checked + label {
-    background-color: var(--primary-color);
-    color: #fff;
-    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--text-color);
 }
 
+.segmented-control input[type="radio"]:checked+label {
+    background: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+/* Toggle Switches */
 .form-toggle-switch {
     position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 28px;
+    width: 48px;
+    height: 26px;
 }
+
 .form-toggle-switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
+
 .form-toggle-switch .slider {
     position: absolute;
     cursor: pointer;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: var(--toggle-color);
-    transition: 0.3s;
-    border-radius: 28px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--toggle-color);
+    border-radius: 34px;
+    transition: 0.4s;
 }
+
 .form-toggle-switch .slider:before {
     position: absolute;
     content: "";
-    height: 20px; width: 20px;
-    left: 4px; bottom: 4px;
-    background-color: var(--sidebar-color);
-    transition: 0.3s;
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background: #fff;
     border-radius: 50%;
+    transition: 0.4s;
 }
-.form-toggle-switch input:checked + .slider {
-    background-color: var(--primary-color);
+
+.form-toggle-switch input:checked+.slider {
+    background: var(--success-color);
 }
-.form-toggle-switch input:checked + .slider:before {
+
+.form-toggle-switch input:checked+.slider:before {
     transform: translateX(22px);
 }
 
+/* Links */
 .setting-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 0;
-    border-bottom: 1px solid var(--toggle-color);
     text-decoration: none;
-    color: var(--text-color);
-    transition: background-color 0.2s;
+    transition: 0.2s;
 }
-.settings-card > .setting-link:last-of-type {
-    border-bottom: none;
-}
-.setting-link:hover .setting-label {
+
+.setting-link:hover .setting-label h3 {
     color: var(--primary-color);
 }
-.setting-link.logout .setting-label {
+
+.setting-link.logout {
     color: var(--accent-color);
+    border-top: 1px dashed var(--toggle-color);
+    margin-top: 10px;
 }
+
+.setting-link.logout:hover {
+    opacity: 0.8;
+}
+
 .setting-link i {
-    font-size: 22px;
-    opacity: 0.5;
+    font-size: 1.4rem;
+    opacity: 0.4;
+    transition: 0.2s;
 }
-.setting-link.logout i {
+
+.setting-link:hover i {
+    transform: translateX(5px);
+    opacity: 1;
+}
+/* New Utility Buttons */
+.btn-small {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.view-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.btn-danger-outline {
+    background: transparent;
+    border: 1px solid var(--accent-color);
     color: var(--accent-color);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
 }
+
+.btn-danger-outline:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* Container spacing */
+.settings-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 @media (max-width: 600px) {
-    .setting-item, .setting-link {
+    .setting-item {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
+    }
+
+    .segmented-control {
+        width: 100%;
+    }
+
+    .segmented-control label {
+        flex: 1;
+        text-align: center;
     }
 }

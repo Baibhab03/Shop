@@ -1,87 +1,146 @@
 .watchlist-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    padding: 20px 0;
+    gap: 20px;
+    align-items: stretch;
 }
 
-.product-card {
+.watchlist-grid .product-card {
+    display: flex !important;
+    flex-direction: column !important;
     border-radius: 18px;
     border: 1px solid var(--toggle-color);
+    background: var(--card-bg-color);
     transition: opacity 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    height: 100%;
+    margin: 0 !important;
+    overflow: hidden;
 }
 
-.product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px var(--shadow-color);
-}
-
-.product-card.removing {
+.watchlist-grid .product-card.removing {
     opacity: 0;
     transform: scale(0.9);
-    
 }
 
-.product-card .card-image-container {
+.watchlist-grid .card-image-container {
     aspect-ratio: 1 / 1;
-    padding: 20px;
-    border-radius: 18px 18px 0px 0px;
+    background-color: #f8f9fa; 
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
-    background-color: var(--body-color);
+    position: relative;
+    border-radius: 18px 18px 0 0;
 }
-.product-card .card-image-container img {
+
+.watchlist-grid .card-image-container img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transition: transform 0.4s ease;
 }
 
-.product-card .card-body {
-    padding: 20px;
-    cursor: pointer;
-    text-align: left;
+/* .watchlist-grid .product-card:hover .card-image-container img {
+    transform: scale(1.08);
+} */
+
+.watchlist-grid .card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
 }
-.product-card .card-body h3 {
-    font-size: 1rem;
+
+.watchlist-grid .card-body h3 {
+    font-size: 0.9rem;
     font-weight: 600;
+    color: var(--text-color);
     margin-bottom: 8px;
     line-height: 1.4;
-    height: calc(1.4em * 2); 
+    height: calc(1.4em * 2);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
 }
-.product-card .price {
-    font-size: 1.2rem;
+
+.watchlist-grid .price {
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--primary-color);
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-.full-width {
-    width: auto;
-    display: inline-block;
+.watchlist-grid .btn-primary {
+    padding: 10px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    width: 100%;
 }
 
 .remove-btn {
     position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 36px;
-    height: 36px;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    border: none;
-    background-color: var(--primary-color-light);
-    color: var(--muted-text-color);
-    font-size: 1.5rem;
+    border: 1px solid var(--toggle-color);
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    font-size: 1.2rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
-    z-index: 2;
+    z-index: 10;
+    box-shadow: 0 2px 5px var(--shadow-color);
 }
+
 .remove-btn:hover {
     background-color: var(--accent-color);
     color: #fff;
+    border-color: var(--accent-color);
     transform: scale(1.1) rotate(90deg);
+}
+
+.empty-state-container {
+    text-align: center;
+    padding: 80px 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1 / -1; 
+}
+
+.empty-state-container.hidden {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .watchlist-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+        gap: 15px;
+    }
+}
+
+@media (hover: hover) {
+    .watchlist-grid .product-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 15px 30px var(--shadow-color);
+    }
+}
+
+@media (hover: none) {
+    .watchlist-grid .product-card:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
 }
