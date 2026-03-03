@@ -953,10 +953,46 @@ document.addEventListener('DOMContentLoaded', () => {
             return user;
         };
 
+        const updateWorkplaceField = () => {
+            const dobRow = document.querySelector('[data-field="dob"]');
+            const workplaceRow = document.getElementById('workplaceRow');
+            if (!dobRow || !workplaceRow) return;
+            
+            const dobValue = dobRow.querySelector('.info-value').textContent;
+            if(!dobValue) return;
+
+            const dob = new Date(dobValue);
+            const age = new Date().getFullYear() - dob.getFullYear();
+            
+            if (age <= 22) {
+                workplaceRow.querySelector('i').className = 'bx bxs-school';
+                workplaceRow.querySelector('.info-label').textContent = 'School Name';
+            } else {
+                workplaceRow.querySelector('i').className = 'bx bx-buildings';
+                workplaceRow.querySelector('.info-label').textContent = 'Office Name';
+            }
+        };
+
+        const updateProfileCompletion = () => {
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            if (!progressBar || !progressText) return;
+            
+            const allEditableRows = detailsSection.querySelectorAll('.info-row[data-field]');
+            let filledCount = 0;
+            allEditableRows.forEach(row => {
+                const value = row.querySelector('.info-value').textContent.trim();
+                // Logic: Only count if value isn't empty and isn't the placeholder "Not set"
+                if (value && value !== '' && value !== 'Not set') filledCount++;
+            });
+            const percentage = Math.round((filledCount / allEditableRows.length) * 100);
+            progressBar.style.width = `${percentage}%`;
+            progressText.textContent = `${percentage}% Complete`;
+        };
+
         const loadProfileToUI = () => {
             const user = getLocalUser();
             
-            // Text Content Updates
             if(document.getElementById('val-name')) document.getElementById('val-name').textContent = user.name;
             if(document.getElementById('input-name')) document.getElementById('input-name').value = user.name;
             
@@ -966,25 +1002,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const headerFirstName = document.getElementById('headerFirstName');
             if(headerFirstName) headerFirstName.textContent = user.name.split(' ')[0] + '!';
 
-            // Iterate over generic fields in your HTML
             ['email', 'phone', 'dob', 'gender', 'location', 'profession', 'workplace'].forEach(field => {
                 const row = document.querySelector(`[data-field="${field}"]`);
                 if(row) {
                     const val = row.querySelector('.info-value');
                     const inp = row.querySelector('.info-input');
-                    if(val) val.textContent = user[field] || '';
+                    if(val) val.textContent = user[field] || 'Not set';
                     if(inp) inp.value = user[field] || '';
                 }
             });
 
-            // Special Interests Logic
             const interestsRow = document.querySelector('[data-field="interests"]');
             if(interestsRow) {
                 const val = interestsRow.querySelector('.info-value');
                 const inp = interestsRow.querySelector('.info-input');
                 if(inp) inp.value = user.interests || '';
-                if(val && user.interests) {
-                    val.innerHTML = user.interests.split(',').filter(x=>x.trim()).map(t=>`<span class="interest-tag">#${t.trim()}</span>`).join('');
+                if(val) {
+                    val.innerHTML = user.interests ? user.interests.split(',').filter(x=>x.trim()).map(t=>`<span class="interest-tag">#${t.trim()}</span>`).join('') : 'Not set';
                 }
             }
 
@@ -996,15 +1030,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         if (detailsSection) {
-            detailsSection.addEventListener('click', (e) => {
-                const editBtn = e.target.closest('.edit-btn');
-                const saveBtn = e.target.closest('.save-btn');
-                const cancelBtn = e.target.closest('.cancel-btn');
-                if (editBtn) toggleEditState(editBtn.closest('.info-row'), true);
-                if (saveBtn) saveChanges(saveBtn.closest('.info-row'));
-                if (cancelBtn) cancelChanges(cancelBtn.closest('.info-row'));
-            });
-
             const toggleEditState = (row, isEditing) => {
                 row.classList.toggle('is-editing', isEditing);
                 const infoVal = row.querySelector('.info-value');
@@ -1025,11 +1050,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('midguard_user', JSON.stringify(user));
                 
                 toggleEditState(row, false);
-                loadProfileToUI();
-                
-                // Sync sidebar globally
-                const sidebarName = document.getElementById('sidebarName');
-                if(sidebarName) sidebarName.textContent = user.name;
+                loadProfileToUI(); // This now calls Workplace and Completion updates
             };
 
             const cancelChanges = (row) => {
@@ -1037,41 +1058,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 loadProfileToUI();
             };
 
-            const updateWorkplaceField = () => {
-                const dobRow = document.querySelector('[data-field="dob"]');
-                const workplaceRow = document.getElementById('workplaceRow');
-                if (!dobRow || !workplaceRow) return;
-                
-                const dobValue = dobRow.querySelector('.info-value').textContent;
-                if(!dobValue) return;
-
-                const dob = new Date(dobValue);
-                const age = new Date().getFullYear() - dob.getFullYear();
-                
-                if (age <= 22) {
-                    workplaceRow.querySelector('i').className = 'bx bxs-school';
-                    workplaceRow.querySelector('.info-label').textContent = 'School Name';
-                } else {
-                    workplaceRow.querySelector('i').className = 'bx bx-buildings';
-                    workplaceRow.querySelector('.info-label').textContent = 'Office Name';
-                }
-            };
-
-            const updateProfileCompletion = () => {
-                const progressBar = document.getElementById('progressBar');
-                const progressText = document.getElementById('progressText');
-                if (!progressBar || !progressText) return;
-                
-                const allEditableRows = detailsSection.querySelectorAll('.info-row[data-field]');
-                let filledCount = 0;
-                allEditableRows.forEach(row => {
-                    const value = row.querySelector('.info-value').textContent;
-                    if (value && value.trim() !== '' && value.trim() !== 'Not set') filledCount++;
-                });
-                const percentage = Math.round((filledCount / allEditableRows.length) * 100);
-                progressBar.style.width = `${percentage}%`;
-                progressText.textContent = `${percentage}% Complete`;
-            };
+            detailsSection.addEventListener('click', (e) => {
+                const editBtn = e.target.closest('.edit-btn');
+                const saveBtn = e.target.closest('.save-btn');
+                const cancelBtn = e.target.closest('.cancel-btn');
+                if (editBtn) toggleEditState(editBtn.closest('.info-row'), true);
+                if (saveBtn) saveChanges(saveBtn.closest('.info-row'));
+                if (cancelBtn) cancelChanges(cancelBtn.closest('.info-row'));
+            });
         }
 
         const profilePicInput = document.getElementById('profilePictureUpload');
@@ -1097,7 +1091,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- SETTINGS PAGE LOGIC ---
     if (window.location.href.includes('settings.html')) {
-        // Theme Radio Buttons
         const themeRadios = document.querySelectorAll('input[name="theme-option"]');
         const currentTheme = localStorage.getItem('mode') || 'light';
         themeRadios.forEach(radio => {
@@ -1109,17 +1102,14 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Notification Toggles
         document.querySelectorAll('.form-toggle-switch input').forEach(toggle => {
             const pref = localStorage.getItem(`pref_${toggle.id}`);
             if (pref !== null) toggle.checked = pref === 'true';
-            
             toggle.addEventListener('change', (e) => {
                 localStorage.setItem(`pref_${e.target.id}`, e.target.checked);
             });
         });
 
-        // Clear Data
         window.clearAppData = () => {
             if(confirm("Clear local cache? This empties Cart, Wishlist, and Orders.")) {
                 localStorage.removeItem('midguard_cart');
